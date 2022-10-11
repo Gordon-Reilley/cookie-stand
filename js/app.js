@@ -33,10 +33,7 @@ let seattle = {
 
 seattle.render();
 
-
 let tokyoList = document.getElementById('tokyoList');
-
-//  3	24	1.2
 
 console.log(tokyoList);
 
