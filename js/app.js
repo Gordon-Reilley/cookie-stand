@@ -63,3 +63,34 @@ let tokyo = {
 };
 
 tokyo.render();
+
+let dubaiList = document.getElementById('tokyoList');
+
+console.log(dubaiList);
+
+let dubai = {
+  name: 'dubai',
+  min: 11,
+  max: 38,
+  avg: 3.7,
+  dailyTotal: 0,
+  cookiesSoldPerHourArr: [],
+  getRandomCus: function() {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  },
+  render: function () {
+    for (let i = 0; i <hours.length; i++) {
+      let avgCookieSale = Math.ceil(this.getRandomCus()* this.avg);
+      this.cookiesSoldPerHourArr.push(avgCookieSale);
+      this.dailyTotal += avgCookieSale;
+      let liDubai = document.createElement('li');
+      liDubai.textContent = `${hours[i]} ${this.cookiesSoldPerHourArr[i]} cookies.`;
+      dubaiList.appendChild(liDubai);
+    }
+    let totalDubLi = document.createElement('li');
+    totalDubLi.textContent = `Total: ${this.dailyTotal}`;
+    dubaiList.appendChild(totalDubLi);
+  }
+};
+
+dubai.render();
