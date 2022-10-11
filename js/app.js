@@ -64,12 +64,12 @@ let tokyo = {
 
 tokyo.render();
 
-let dubaiList = document.getElementById('tokyoList');
+let dubaiList = document.getElementById('dubaiList');
 
 console.log(dubaiList);
 
 let dubai = {
-  name: 'dubai',
+  name: 'Dubai',
   min: 11,
   max: 38,
   avg: 3.7,
@@ -94,3 +94,34 @@ let dubai = {
 };
 
 dubai.render();
+
+let parisList = document.getElementById('parisList');
+
+console.log(parisList);
+
+let paris = {
+  name: 'Paris',
+  min: 20,
+  max: 38,
+  avg: 2.3,
+  dailyTotal: 0,
+  cookiesSoldPerHourArr: [],
+  getRandomCus: function() {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  },
+  render: function () {
+    for (let i = 0; i <hours.length; i++) {
+      let avgCookieSale = Math.ceil(this.getRandomCus()* this.avg);
+      this.cookiesSoldPerHourArr.push(avgCookieSale);
+      this.dailyTotal += avgCookieSale;
+      let liParis = document.createElement('li');
+      liParis.textContent = `${hours[i]} ${this.cookiesSoldPerHourArr[i]} cookies.`;
+      parisList.appendChild(liParis);
+    }
+    let totalParLi = document.createElement('li');
+    totalParLi.textContent = `Total: ${this.dailyTotal}`;
+    parisList.appendChild(totalParLi);
+  }
+};
+
+paris.render();
