@@ -125,3 +125,34 @@ let paris = {
 };
 
 paris.render();
+
+let limaList = document.getElementById('limaList');
+
+console.log(limaList);
+
+let lima = {
+  name: 'Lima',
+  min: 2,
+  max: 16,
+  avg: 4.6,
+  dailyTotal: 0,
+  cookiesSoldPerHourArr: [],
+  getRandomCus: function() {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  },
+  render: function () {
+    for (let i = 0; i <hours.length; i++) {
+      let avgCookieSale = Math.ceil(this.getRandomCus()* this.avg);
+      this.cookiesSoldPerHourArr.push(avgCookieSale);
+      this.dailyTotal += avgCookieSale;
+      let liLima = document.createElement('li');
+      liLima.textContent = `${hours[i]} ${this.cookiesSoldPerHourArr[i]} cookies.`;
+      limaList.appendChild(liLima);
+    }
+    let totalLimLi = document.createElement('li');
+    totalLimLi.textContent = `Total: ${this.dailyTotal}`;
+    limaList.appendChild(totalLimLi);
+  }
+};
+
+lima.render();
