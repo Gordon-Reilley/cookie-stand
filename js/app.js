@@ -34,4 +34,35 @@ let seattle = {
 seattle.render();
 
 
+let tokyoList = document.getElementById('tokyoList');
 
+//  3	24	1.2
+
+console.log(tokyoList);
+
+let tokyo = {
+  name: 'tokyo',
+  min: 3,
+  max: 24,
+  avg: 1.2,
+  dailyTotal: 0,
+  cookiesSoldPerHourArr: [],
+  getRandomCus: function() {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  },
+  render: function () {
+    for (let i = 0; i <hours.length; i++) {
+      let avgCookieSale = Math.ceil(this.getRandomCus()* this.avg);
+      this.cookiesSoldPerHourArr.push(avgCookieSale);
+      this.dailyTotal += avgCookieSale;
+      let liTokyo = document.createElement('li');
+      liTokyo.textContent = `${hours[i]} ${this.cookiesSoldPerHourArr[i]} cookies.`;
+      tokyoList.appendChild(liTokyo);
+    }
+    let totalTokLi = document.createElement('li');
+    totalTokLi.textContent = `Total: ${this.dailyTotal}`;
+    tokyoList.appendChild(totalTokLi);
+  }
+};
+
+tokyo.render();
