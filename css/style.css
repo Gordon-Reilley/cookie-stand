@@ -2,11 +2,21 @@
   box-sizing: border-box;
 }
 
-table, tr, td {
+header {
+  padding: 2rem;
+}
+
+table, tr, td, th {
   border: 1px solid black;
 }
 
+th {
+  padding: .25rem;
+  text-align: center;
+}
+
 td {
-  padding: 1rem;
+  padding: .5rem;
+  text-align: center;
 }
 
