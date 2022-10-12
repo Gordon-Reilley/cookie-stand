@@ -42,7 +42,29 @@ let seattle = new Cities (
 
 seattle.render();
 
+let tokyo = new Cities (
+  'Tokyo', 3, 24, 1.2
+);
 
+tokyo.render();
+
+let dubai = new Cities (
+  'Dubai', 11, 38, 3.7
+);
+
+dubai.render();
+
+let paris = new Cities (
+  'Paris', 20, 38, 2.3
+);
+
+paris.render();
+
+let lima = new Cities (
+  'Lima', 2, 16, 4.6
+);
+
+lima.render();
 
 // let seattleList = document.getElementById('seattleList');
 
