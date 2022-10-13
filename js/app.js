@@ -4,6 +4,9 @@ const table = document.getElementById('citiesData');
 
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.','9 a.m.','10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
+let allCookieStores = [];
+console.log(allCookieStores);
+
 function Cities(name, min, max, avg) {
   this.name = name;
   this.min = min;
@@ -11,6 +14,7 @@ function Cities(name, min, max, avg) {
   this.avg = avg;
   this.dailyTotal = 0;
   this.cookiesSoldPerHourArr = [];
+  allCookieStores.push(this);
 }
 
 Cities.prototype.getRandomCus = function() {
@@ -49,40 +53,43 @@ let dailyTotes = document.createElement('th');
 dailyTotes.textContent = 'Daily Location Total';
 table.appendChild(dailyTotes);
 
-let seattle = new Cities (
-  'Seattle', 23, 65, 6.3
-);
+new Cities('Seattle', 23, 65, 6.3);
 
-seattle.render();
+new Cities('Tokyo', 3, 24, 1.2);
 
-let tokyo = new Cities (
-  'Tokyo', 3, 24, 1.2
-);
+new Cities('Dubai', 11, 38, 3.7);
 
-tokyo.render();
+new Cities('Paris', 20, 38, 2.3);
 
-let dubai = new Cities (
-  'Dubai', 11, 38, 3.7
-);
+new Cities('Lima', 2, 16, 4.6);
 
-dubai.render();
+console.log(allCookieStores);
+// let allCookieStores = [seattle,tokyo,dubai,paris,lima];
 
-let paris = new Cities (
-  'Paris', 20, 38, 2.3
-);
-
-paris.render();
-
-let lima = new Cities (
-  'Lima', 2, 16, 4.6
-);
-
-lima.render();
+for (let i = 0; i < allCookieStores.length; i++) {
+  allCookieStores[i].render();
+}
 
 let footerTotal = document.createElement('th');
 footerTotal.textContent = 'Total';
 table.appendChild(footerTotal);
 
+let footer = function() {
+  for (let i = 0; i < hours.length; i++) {
+    let currentTotal = 0;
+    for (let j = 0; j < allCookieStores.length; j++) {
+      let hourlyTotal = allCookieStores[j].cookiesSoldPerHourArr[i];
+      // currentTotal = currentTotal + hourlyTotal
+      currentTotal += hourlyTotal;
+    }
+    console.log(currentTotal);
+    let hourlyTotalTh = document.createElement('th');
+    hourlyTotalTh.textContent = currentTotal;
+    table.appendChild(hourlyTotalTh);
+  }
+};
+
+footer();
 
 // let seattleList = document.getElementById('seattleList');
 
