@@ -70,11 +70,10 @@ for (let i = 0; i < allCookieStores.length; i++) {
   allCookieStores[i].render();
 }
 
-let footerTotal = document.createElement('th');
-footerTotal.textContent = 'Total';
-table.appendChild(footerTotal);
-
 let footer = function() {
+  let footerTotal = document.createElement('th');
+  footerTotal.textContent = 'Total';
+  table.appendChild(footerTotal);
   for (let i = 0; i < hours.length; i++) {
     let currentTotal = 0;
     for (let j = 0; j < allCookieStores.length; j++) {
@@ -87,10 +86,33 @@ let footer = function() {
     hourlyTotalTh.textContent = currentTotal;
     table.appendChild(hourlyTotalTh);
   }
+  let emptyThFoot = document.createElement('th');
+  emptyThFoot.textContent = '';
+  table.appendChild(emptyThFoot);
 };
 
 footer();
 
+let form = document.querySelector('form');
+
+let handleSubmit = function(event) {
+  event.preventDefault();
+  // table.deleteRow(4);
+  let name = event.target.location.value;
+  let min = parseInt(event.target.Minimum.value);
+  let max = parseInt(event.target.Maximum.value);
+  let avg = parseInt(event.target.Average.value);
+
+  let newStore = new Cities(name, min, max, avg);
+  console.log(newStore);
+
+  newStore.render();
+  footer();
+};
+
+form.addEventListener('submit', handleSubmit);
+
+//document.getElementById(footer).remove();
 // let seattleList = document.getElementById('seattleList');
 
 // // console.log(seattleList);

@@ -2,21 +2,70 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(227, 217, 217);
+}
+
 header {
-  padding: 2rem;
+  background-color: salmon;
+  
+}
+
+h1 {
+  font-weight: bold;
+  font-size: xxx-large;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: .25rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  width: 960px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+
+li {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkcyan;
+  font-size: large;
 }
 
 table, tr, td, th {
-  border: 1px solid black;
+  border: 2px solid black;
+  margin: auto;
+  color: salmon;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 th {
   padding: .25rem;
   text-align: center;
+  background-color: bisque;
+  
 }
 
 td {
   padding: .5rem;
   text-align: center;
+  background-color: darkcyan;
 }
 
