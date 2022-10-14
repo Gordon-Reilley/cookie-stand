@@ -12,18 +12,52 @@
 </head>
 
 <body>
+
   <header>
     <nav>
       <h1>
-        Sales Data Page
+        Cookie Calculator
       </h1>
-      <a href="../index.html">Home</a>
+      
+      <ul>
+        <li><a href="../index.html">Home</a>
+        <li><a href="">Nav Item 2</a></li>
+        <li><a href="">Nav Item 3</a></li>
+        <li><a href="">Nav Item 4</a></li>
+      </ul>
+
+      <img src="../img/fish.jpg" height="70px" width="200px">
     </nav>
   </header>
 
   <main>
-    <table id="citiesData"></table>
+      <aside>
+        <form>
+          <fieldset>
+            <legend>Calculate Your Store</legend>
+            <label>Location
+              <input type="text" name="location">
+            </label>
+            <label>Minimum Customers
+              <input type="number" name="Minimum">
+            </label>
+            <label>Maximum Customers
+              <input type="number" name="Maximum">
+            </label>
+            <label>Average Cookies per Customer
+              <input type="number" name="Average">
+            </label>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </aside>
+    
+      <br>  
+      <table id="citiesData"></table>
+    </br>
+    
     <script src="../js/app.js" text="text/javascript"></script>
   </main>
+
 </body>
 </html>
