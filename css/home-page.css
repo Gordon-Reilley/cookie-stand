@@ -1,0 +1,91 @@
+body {
+  background-color: bisque;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: xxx-large;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: salmon
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+ul {
+  width: 960px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+li {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: salmon;
+  font-size: large;
+}
+
+main {
+  background-color: darkcyan;
+  width: 960px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+h3 {
+  margin: 1rem 0;
+  padding: .5rem 0;
+  width: 960px;
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: salmon;
+}
+
+main img {
+  margin-bottom: 30px;
+}
+
+section {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(76, 248, 67);
+}
+
+section ul {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+section li {
+  margin: 10px;
+}
+
+footer {
+  background-color: salmon;
+  text-align: left;
+  font-weight: normal;
+  font-size: large;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
