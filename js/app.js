@@ -63,9 +63,6 @@ new Cities('Paris', 20, 38, 2.3);
 
 new Cities('Lima', 2, 16, 4.6);
 
-// console.log(allCookieStores);
-// let allCookieStores = [seattle,tokyo,dubai,paris,lima];
-
 for (let i = 0; i < allCookieStores.length; i++) {
   allCookieStores[i].render();
 }
@@ -78,10 +75,8 @@ let footer = function() {
     let currentTotal = 0;
     for (let j = 0; j < allCookieStores.length; j++) {
       let hourlyTotal = allCookieStores[j].cookiesSoldPerHourArr[i];
-      // currentTotal = currentTotal + hourlyTotal
       currentTotal += hourlyTotal;
     }
-    console.log(currentTotal);
     let hourlyTotalTh = document.createElement('th');
     hourlyTotalTh.textContent = currentTotal;
     table.appendChild(hourlyTotalTh);
@@ -97,7 +92,6 @@ let form = document.querySelector('form');
 
 let handleSubmit = function(event) {
   event.preventDefault();
-  // table.deleteRow(6);
   let name = event.target.location.value;
   let min = parseInt(event.target.Minimum.value);
   let max = parseInt(event.target.Maximum.value);
@@ -113,33 +107,4 @@ let handleSubmit = function(event) {
 form.addEventListener('submit', handleSubmit);
 
 //document.getElementById(footer).remove();
-// let seattleList = document.getElementById('seattleList');
-
-// // console.log(seattleList);
-
-// let seattle = {
-//   name: 'Seattle',
-//   min: 23,
-//   max: 65,
-//   avg: 6.3,
-//   dailyTotal: 0,
-//   cookiesSoldPerHourArr: [],
-//   getRandomCus: function() {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-//   render: function () {
-//     for (let i = 0; i <hours.length; i++) {
-//       let avgCookieSale = Math.ceil(this.getRandomCus()* this.avg);
-//       this.cookiesSoldPerHourArr.push(avgCookieSale);
-//       this.dailyTotal += avgCookieSale;
-//       let liSeattle = document.createElement('li');
-//       liSeattle.textContent = `${hours[i]} ${this.cookiesSoldPerHourArr[i]} cookies.`;
-//       seattleList.appendChild(liSeattle);
-//     }
-//     let totalSeaLi = document.createElement('li');
-//     totalSeaLi.textContent = `Total: ${this.dailyTotal}`;
-//     seattleList.appendChild(totalSeaLi);
-//   }
-// };
-
-// seattle.render();
+// table.deleteRow(6);
