@@ -63,7 +63,7 @@ new Cities('Paris', 20, 38, 2.3);
 
 new Cities('Lima', 2, 16, 4.6);
 
-console.log(allCookieStores);
+// console.log(allCookieStores);
 // let allCookieStores = [seattle,tokyo,dubai,paris,lima];
 
 for (let i = 0; i < allCookieStores.length; i++) {
