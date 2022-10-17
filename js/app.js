@@ -71,7 +71,7 @@ for (let i = 0; i < allCookieStores.length; i++) {
 }
 
 let footer = function() {
-  let footerTotal = document.createElement('td');
+  let footerTotal = document.createElement('th');
   footerTotal.textContent = 'Total';
   table.appendChild(footerTotal);
   for (let i = 0; i < hours.length; i++) {
@@ -82,11 +82,11 @@ let footer = function() {
       currentTotal += hourlyTotal;
     }
     console.log(currentTotal);
-    let hourlyTotalTh = document.createElement('td');
+    let hourlyTotalTh = document.createElement('th');
     hourlyTotalTh.textContent = currentTotal;
     table.appendChild(hourlyTotalTh);
   }
-  let emptyThFoot = document.createElement('td');
+  let emptyThFoot = document.createElement('th');
   emptyThFoot.textContent = '';
   table.appendChild(emptyThFoot);
 };
@@ -97,7 +97,7 @@ let form = document.querySelector('form');
 
 let handleSubmit = function(event) {
   event.preventDefault();
-  table.deleteRow(6);
+  // table.deleteRow(6);
   let name = event.target.location.value;
   let min = parseInt(event.target.Minimum.value);
   let max = parseInt(event.target.Maximum.value);
