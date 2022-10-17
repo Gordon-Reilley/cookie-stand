@@ -1,6 +1,7 @@
 'use strict';
 
 const table = document.getElementById('citiesData');
+let footerTotal = document.createElement('tfoot');
 
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.','9 a.m.','10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
@@ -68,7 +69,6 @@ for (let i = 0; i < allCookieStores.length; i++) {
 }
 
 let footer = function() {
-  let footerTotal = document.createElement('th');
   footerTotal.textContent = 'Total';
   table.appendChild(footerTotal);
   for (let i = 0; i < hours.length; i++) {
@@ -79,11 +79,11 @@ let footer = function() {
     }
     let hourlyTotalTh = document.createElement('th');
     hourlyTotalTh.textContent = currentTotal;
-    table.appendChild(hourlyTotalTh);
+    footerTotal.appendChild(hourlyTotalTh);
   }
   let emptyThFoot = document.createElement('th');
   emptyThFoot.textContent = '';
-  table.appendChild(emptyThFoot);
+  footerTotal.appendChild(emptyThFoot);
 };
 
 footer();
@@ -99,7 +99,6 @@ let handleSubmit = function(event) {
 
   let newStore = new Cities(name, min, max, avg);
   console.log(newStore);
-
   newStore.render();
   footer();
 };

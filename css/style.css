@@ -92,14 +92,14 @@ button:hover {
   background-color: bisque;
 }
 
-table, tr, td, th {
+table, tr, td, th, tfoot {
   border: 2px solid black;
   margin: auto;
   color: salmon;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-th {
+th, tfoot {
   padding: .25rem;
   text-align: center;
   background-color: bisque;
